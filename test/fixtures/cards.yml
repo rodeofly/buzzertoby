@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  couleur: MyString
+  valeur: MyString
+  deck_id: 1
+
+two:
+  name: MyString
+  couleur: MyString
+  valeur: MyString
+  deck_id: 1

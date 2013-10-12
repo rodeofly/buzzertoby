@@ -1,0 +1,64 @@
+// Place all the styles related to the Cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body { 
+  margin:0;
+  padding:0; 
+}
+
+.ensemble {
+  height : 120px;
+  
+  
+}
+
+.carte {
+  display: inline-block;
+  margin-right : -35px;
+  width: 65px;
+  height: 100px;
+  border: 1px solid black; 
+  background: white; 
+  border-radius: 8px;
+}
+.placeholder {
+  visibility: visible !important;
+  padding: 0;
+  margin-bottom: -100px;
+  height: 100px;  
+  background: lightGreen;  
+}
+
+.♦, .♥ { 
+  color: red; 
+}
+  
+.♠, .♣ { 
+  color: black;
+}
+
+#evenement {
+  background-color: green;
+  border : solid 2px black;
+  padding : 10px;
+}
+#banque {
+  background-color: purple;
+  border : solid 2px black;
+  padding : 10px;
+}
+ 
+#diagnostic1 {
+  color: DarkRed; 
+}
+
+#triche { 
+  width: 200px; 
+  height: 10px; 
+}
+
+.ui-widget-header {
+        background-image: none !important;
+        background-color: #FF0000 !important; //Any colour can go here
+    }

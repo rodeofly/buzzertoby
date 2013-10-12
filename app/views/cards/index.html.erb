@@ -1,0 +1,73 @@
+<span class="soluce"></span>
+<h1>Jeu de cartes</h1>
+Constituer l'évènement suivant (en glissant les cartes le constituant sur le tapis vert) :
+<button id="random">random</button>
+<div>
+    <input type="radio" name="conjonction" value="et" checked>et</input>
+    <input type="radio" name="conjonction" value="ou">ou</input>
+</div>
+<div>
+    <input type="checkbox" name="un coeur" data-couleur="♥">un coeur</input>
+	<input type="checkbox" name="un pique" data-couleur="♠">un pique</input>
+	<input type="checkbox" name="un carreau" data-couleur="♦">un carreau</input>
+	<input type="checkbox" name="un trèfle" data-couleur="♣">un trèfle</input>
+	<input type="checkbox" name="une rouge" data-tags="rouge">une rouge</input>
+	<input type="checkbox" name="une noire" data-tags="noire">une noire</input>
+	<input type="checkbox" name="un valet" data-valeur="V">un valet</input>
+	<input type="checkbox" name="une dame" data-valeur="D">une dame</input>
+	<input type="checkbox" name="un roi" data-valeur="R">un roi</input>
+	<input type="checkbox" name="un as" data-valeur="1">un as</input>
+	<input type="checkbox" name="une figure" data-tags="figure">une figure</input>
+	<input type="checkbox" name="un pair" data-tags="paire">paire</input>
+	<input type="checkbox" name="un impair" data-tags="impaire">impaire</input>
+</div>
+    
+    
+<h2>La carte tirée au hasard est un <span class="evenement_aleatoire" /></span></h2>
+
+<div id="progressbar"></div>
+
+<div class="ensemble" id="banque">
+	<% @cards.each do |card| %>
+	  <div class="carte <%= card.couleur %>" id="carte_<%= card.id %>" data-tags="<%= card.tag_list %>" data-valeur="<%= card.valeur %>" data-couleur="<%= card.couleur %>"><%= card.valeur %><%= card.couleur %></div>
+	<% end %>
+</div>
+<br />
+<div id="evenement" class="ensemble"></div>
+
+<h4>L'évènement {<span class="listeEventualites"></span>} <span class="diagnostic">ne correspond pas</span> à l'évènement 
+"la carte est <span class="evenement_aleatoire"></span>".
+<br />
+<h1>Listing cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Couleur</th>
+      <th>Valeur</th>
+      <th>Deck</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.name %></td>
+        <td><%= card.couleur %></td>
+        <td><%= card.valeur %></td>
+        <td><%= card.deck_id %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card', new_card_path %>
